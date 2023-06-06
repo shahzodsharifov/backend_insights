@@ -1,0 +1,20 @@
+type User struct {
+	ID        uuid.UUID `gorm:"type:uuid;default:uuid_generate_v4();primary_key"`
+	Name      string     `gorm:"type:varchar(100);not null"`
+	Username      string  `gorm:"type:varchar(100);uniqueIndex;not null"`
+	Email     string     `gorm:"type:varchar(100);uniqueIndex;not null"`
+	Password  string     `gorm:"type:varchar(100);not null"`
+	Role      *string    `gorm:"type:varchar(50);default:'user';not null"`
+	Photo     *string    `gorm:"not null;default:'default.png'"`
+	Verified  *bool      `gorm:"not null;default:false"`
+	Followers []*User	`gorm:"many2many:user_relationships;association_jointable_foreignkey:follower_id"`
+	Following []*User 	`gorm:"many2many:user_relationships;association_jointable_foreignkey:following_id"`
+	CreatedAt *time.Time `gorm:"not null;default:now()"`
+	UpdatedAt *time.Time `gorm:"not null;default:now()"`
+}
+
+type UserRelationship struct {
+	ID         uuid.UUID `gorm:"type:uuid;default:uuid_generate_v4();primary_key"`
+	FollowerID   uuid.UUID `gorm:"type:uuid;not null"`
+	FollowingID  uuid.UUID `gorm:"type:uuid;not null"`
+}
