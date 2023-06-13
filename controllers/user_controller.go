@@ -108,7 +108,7 @@ func SignInUser(c *fiber.Ctx) error {
 		MaxAge: config.JwtMaxAge * 60,
 		Secure: false,
 		HTTPOnly: true,
-		Domain: "vercel.app",
+		Domain: "onrender.com",
 		SameSite: "none",
 
 	})
