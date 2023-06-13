@@ -28,13 +28,13 @@ func main() {
 	app.Use(logger.New())
 
 	micro.Use(cors.New(cors.Config{
-		AllowOrigins:     "https://insightsuz.vercel.app",
+		AllowOrigins:     "https://insights-frontend-55ak.onrender.com",
 		AllowHeaders:     "Origin, Content-Type, Accept",
 		AllowMethods:     "GET, POST, PATCH, DELETE",
 		AllowCredentials: true,
 	}))
 	app.Use(cors.New(cors.Config{
-		AllowOrigins:     "https://insightsuz.vercel.app",
+		AllowOrigins:     "https://insights-frontend-55ak.onrender.com",
 		AllowHeaders:     "Origin, Content-Type, Accept",
 		AllowMethods:     "GET, POST, PATCH, DELETE",
 		AllowCredentials: true,
