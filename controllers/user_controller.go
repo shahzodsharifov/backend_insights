@@ -108,7 +108,7 @@ func SignInUser(c *fiber.Ctx) error {
 		MaxAge: config.JwtMaxAge * 60,
 		Secure: true,
 		HTTPOnly: true,
-		Domain: "insights-frontend-55ak.onrender.com/",
+		Domain: "insights-frontend-55ak.onrender.com",
 		SameSite: "none",
 
 	})
