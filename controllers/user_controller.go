@@ -108,7 +108,7 @@ func SignInUser(c *fiber.Ctx) error {
 		MaxAge: config.JwtMaxAge * 60,
 		Secure: true,
 		HTTPOnly: true,
-		Domain: "noted.today",
+		Domain: "www.noted.today",
 		SameSite: "none",
 
 	})
